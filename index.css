@@ -86,3 +86,26 @@ input::-webkit-outer-spin-button,
     -webkit-appearance: none;
     margin: 0;
   }
+
+  /* //1=-Why CSS and Use cases */
+ /* //2 what is box model   four part of box model 1-margin 2-border 3-padding 4-content */
+ /* //3 Create the name field, select field, radio buttons, and checkbox for this  with use the button Style On this */
+/* //4 How Many Ways We can gives css  1-Inline 2-embedde 3-external ccs */
+/*  //5-Types of Selectors how we can Use this our projects   1-Element selectors 2-class 3-group 4-universal selectors
+         /* -attribute selectors 6-id selectors 7-pseudo-class selectors 8-pseudo-element selectors */ 
+            /* decendendin  arrribute selector , 
+         combinator selectorgeneral sibling selector, adjustment selector */ 
+    /* 6-postion -  1-static 2- fixed 3- relatove 4- sticky 5-absolute
+      overflow  - 1-scroll 2-hidden 3-auto  4-none 5-overflow-x 6-overflow=y
+      indexing  - z-index
+      opacity  - opacity */
+      /* Background -  
+      1- background-color
+      2- background-image
+      3- background-repest
+      4- background-position
+      5- background-size
+      6- background-attachment
+      7- background-clip
+      8- background-origin
+      9- background- shorthand */
