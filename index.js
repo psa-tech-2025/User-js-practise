@@ -123,3 +123,138 @@ for(let key of striang) {
   let va =key;
     console.log(va.toUpperCase())
 }
+document.addEventListener("DOMContentLoaded", function () {
+document.getElementById("userForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+    let formData = new FormData(this);
+    let data = {};
+    formData.forEach((value, key) => {
+              // Handle multiple checkbox values as an array
+        if (data[key]) {
+            if (Array.isArray(data[key])) {
+                data[key].push(value);
+            } else {
+                data[key] = [data[key], value];
+            }
+        } else {
+            data[key] = value;
+        }
+    });
+     console.log(data);
+});
+});
+
+let title = document.getElementById("title");
+console.log(title)
+
+//7. Events & DOMContentLoaded
+//6. Removing Elements (querySelector  remove)
+//5. Modifying Elements (document.getElementById);
+//4. Creating & Adding Elements (document.createElement   document.body.appendChild(newDiv); )
+// E. By CSS Selector (All Matches) (document.querySelectorAll);
+// D. By CSS Selector (First Match) (document.querySelector);
+// C. By Tag Name  (document.getElementsByTagName);
+ //B. By Class Name (document.getElementsByClassName);
+ //Ways to Get Elements in the DOM  (document.getElementById)
+//Object Creation ways
+//1 {};
+let obj = {
+    name:'sa',
+    age:23
+};
+console.log(obj);
+console.log(Object.keys(obj).length, Object.keys(obj));
+console.log(Object.values(obj));
+console.log(Object.entries(obj));
+
+// 1️⃣ Check if it’s actually an object
+console.log(typeof(obj));
+console.log(obj instanceof Object);
+console.log(Object.prototype.toString(obj));
+
+//2️⃣ Check if the object is empty
+console.log(Object.keys(obj).length ===0); //false
+console.log(Object.values(obj).length ===2);//true
+
+//3️⃣ Get all keys, values, or entries
+    console.log(Object.keys(obj));   // ["name", "age"]
+    console.log(Object.values(obj)); // ["sa", 23]
+    console.log(Object.entries(obj)); // [["name", "sa"], ["age", 23]]
+
+//4️⃣ Loop through object properties
+for (let key in obj) {
+  if (obj.hasOwnProperty(key)) {
+    console.log(key, obj[key]);
+  }
+}
+
+Object.entries(obj).forEach(([key, value]) => {
+  console.log(key, value);
+});
+
+//5️⃣ Check if a property exists
+console.log('name' in obj); // true
+console.log(obj.hasOwnProperty('age')); // true
+console.log(Object.keys(obj).includes('age')); // true
+
+//6️⃣ Access property values
+console.log(obj.name);    // "sa"
+console.log(obj['age']);  // 23
+
+//7️⃣ Validate property type
+console.log(typeof obj.name === 'string'); // true
+console.log(typeof obj.age === 'number');  // true
+
+
+//2  Using new Object() Constructor
+
+let paw = new Object();
+paw.na ="kdjk";
+paw.year =2020;
+console.log(paw)
+
+// 3. Using Constructor Function
+    function person (name,age) {
+        this.name =name;
+        this.age =age;
+    }
+
+    let valco = new person('sp',24);
+    console.log(valco);
+    console.log(new person('may',30));
+
+//4. Using ES6 class
+class Person  {
+    constructor(name, age ) {
+        this.name =name;
+        this.age =age;
+    }
+}
+let p1 = new Person('john',10);
+console.log(p1);
+//5. Using Object.create()
+let proto = { greet() { console.log('Hello'); } };
+let objj = Object.create(proto);
+objj.name = 'John';
+console.log(objj);
+objj.greet();
+
+//6. Using Factory Function
+function createPerson(name, age) {
+    return { name, age };
+}
+let p11 = createPerson('John', 25);
+console.log(p11);
+
+//7. Using Singleton Pattern
+
+let obj1 = new function() {
+    this.name = 'John';
+    this.age = 25;
+};
+console.log(obj1);
+
+// 8. Using JSON
+let objparse = JSON.parse('{"name":"John","age":25}');
+console.log(objparse);
+
