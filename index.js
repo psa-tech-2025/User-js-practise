@@ -1,5 +1,7 @@
-let  a =5;
-console.log(a)
+// import { num, greet } from './server';
+// greet();
+// let  a =5;
+// console.log(a)
 // 1- why  1-interactivity  2-cross platform supportive 3-Client side Exesuation 4-versatility 5-Huge Ecosystem 6-event handelling 7-Asynchronous programming(async/await) 8-integration 9-Rapid Development 10-Supports modern Web Featurs
 //Usecases 1-web developmenrt 2-app developmenrt 3- game 4- mobile supportive  5- cross platform  6-desktop (electron) 7- server site scripting 8-data visulation 9-iot
 
@@ -44,10 +46,10 @@ let arrspr =[100,200,300];
 let ressprd = [...arrspr,1,2,3];
 console.log(ressprd);
 function red (...arrsp) {
-    return arrsp.reduce((a,b) => a+b,0); 
+    return arrsp.reduce((a,b) => a+b,0);
 }
 console.log(red(arrspr));
-//Loops in js  
+//Loops in js
     // 1-for loop
     let arrfor = [1,2,3,4,5];
     for(let i=0;  i < arrfor.length; i++) {
@@ -82,7 +84,7 @@ let sh =17;
 //     console.log('Number', numdo);
 //       setInterval(10000)
 //          numdo++;
-  
+
 // } while(numdo<= 5)
 
 function delay(ms) {
@@ -106,9 +108,9 @@ let forof = [100,200,300];
 for (let key of forof) {
     console.log(key)
 }
-let objarr = [ 
+let objarr = [
     { name:'sp',age:'23',address:'xyz'},
-    { name:'sp2',age:'232'},  
+    { name:'sp2',age:'232'},
     {address: 'yedsh'}
 ];
  objarr[1].address= objarr[2].address;
@@ -258,3 +260,338 @@ console.log(obj1);
 let objparse = JSON.parse('{"name":"John","age":25}');
 console.log(objparse);
 
+
+
+//ES-6 Featurs
+// 1-const and let keyword
+// 2- Arrow Functions
+const sum =(a,b) => a+b;
+console.log(sum(10,20));
+// 3-Template Literal
+
+const user ="alice";
+console.log(`hellow, ${user}`);
+
+// 4-Default Parameter
+function defa (name="sp") {
+    console.log(`hell ${name}`)
+}
+
+defa();
+//5. Destructuring Assignment
+    //array destuructring
+let arrdest = ['1',2,3,5,];
+[a,b] =arrdest;
+console.log(a,b)
+    //Object Destructurring
+objdesgt = { name:'sp', agee:29};
+const {name, agee} = objdesgt;
+console.log(agee)
+
+//6  Spread (...) and Rest Parameters
+// Spread (expands arrays/objects)
+const nums = [1, 2, 3];
+const newNums = [...nums, 4, 5];
+console.log(newNums); // [1, 2, 3, 4, 5]
+
+// Rest (collects arguments)
+function summ(...args) {
+  return args.reduce((a, b) => a + b, 0);
+}
+console.log(summ(1, 2, 3)); // 6
+
+//7-7. Object Property Shorthand
+let name1 = "Tom", age1 = 25;
+const person1 = { name1, age1 };
+console.log(person1)
+
+//8. Object Destructuring with Default Values
+const { x1 = 5, y1 = 10 } = { x1: 7 };
+console.log(x1, y1); // 7 10
+//9- for...of Loop
+for (let num of [1, 2, 3]) {
+  console.log(num);
+}
+
+//10. Classes
+
+class myclass {
+    constructor(name ,age){
+        this.name =name;
+        this.age =age;
+    }
+    greet() {
+        console.log(`my name is ${this.name}, and age is ${this.age}`)
+    }
+}
+let c1 = new myclass('sss',34);
+c1.greet()
+
+//11. Inheritance with extends & super
+
+class Animal {
+  speak() {
+    console.log("Animal speaks");
+  }
+}
+class Dog extends Animal {
+  speak() {
+    super.speak();
+    console.log("Dog barks");
+  }
+}
+new Dog().speak();
+
+//12. Modules (import & export)
+// console.log(filename)
+// greet();
+
+//13-  Promises
+
+const pro = new Promise((resolve,reject) => {
+    let val =true;
+    if(val==true) {
+        setTimeout(() => {
+            resolve('promise resolved')
+        }, 5000);
+    } else {
+        reject('promise rejected')
+    }
+});
+// pro
+//     .then((res) => console.log(res))
+//     .catch((err) => console.log(err))
+
+async function handelpromise() {
+    try  {
+        const resu = await pro;
+        console.log(resu)
+    } catch (err) {
+        console.log(err)
+    }
+}
+handelpromise()
+
+
+//16. Map & Set
+//set
+let setme = [1,2,2,3,4,4,5];
+let fina= new Set([...setme]);
+console.log(fina)
+
+//Map
+let map = new Map();
+map.set("na","sdkjjdfdfdf");
+map.set("vil" ,"yedshi");
+console.log(map)
+
+//Shallow Copy deep copy
+// shallow copy
+
+let shaiiow = {
+    tech:'frontend',
+    dev: { jenkin: 'v3', k8s:'deployment'}
+};
+console.log(shaiiow)
+shaiiow.dev.jenkin ="v5";
+console.log(shaiiow);
+//Object.assign()
+//Spread operator { ...obj }
+//Array methods: slice(), concat(), [...arr]
+
+
+//deep copy
+
+let deepco = JSON.parse(JSON.stringify(shaiiow));
+// console.log(deepco)
+// let fide = deepco.JSON.parse(deepco);
+// console.log(fide);
+console.log(deepco);
+deepco.dev.jenkin="v10";
+console.log(deepco);
+console.log(shaiiow)
+
+
+//OOPS Concept in Js
+
+// 1- Class & Object
+//2- Encapsulation
+    // Wrapping data (properties) and behavior (methods) inside a single unit.
+    //Use private fields (#) to hide data.
+
+//3. Abstraction
+   // Hiding internal details and showing only necessary parts to the outside.
+   // Achieved via methods without exposing complex implementation.
+//4. Inheritance
+    //One class can inherit properties & methods from another class using extends.
+//5. Polymorphism
+    //Same method name but different behavior depending on the object.
+    //Achieved via method overriding.
+
+//Encapsulation → Private properties/methods
+//Abstraction → Hide implementation details
+//Inheritance → Reuse code via extends or prototypes
+//Polymorphism → Same method name, different behavior
+
+
+//EVENTS in all Use in js
+
+//1. Mouse Events
+
+//  click	Fires when mouse button is clicked.
+// dblclick	Fires on double click.
+// mousedown	Fires when mouse button is pressed.
+// mouseup	Fires when mouse button is released.
+// mousemove	Fires when mouse pointer moves.
+// mouseenter	Mouse enters the element (no bubbling).
+// mouseleave	Mouse leaves the element (no bubbling).
+// mouseover	Mouse enters (bubbles).
+// mouseout	Mouse leaves (bubbles).
+// contextmenu	Right-click event.
+
+// 2. Keyboard Events
+    // keydown	Key is pressed (fires repeatedly if held).
+    // keyup	Key is released.
+    // keypress	Key is pressed (deprecated — use keydown).
+
+// 3. Form Events
+// Event	Description
+// submit	Form submission.
+// reset	Form reset.
+// focus	Element gains focus.
+// blur	Element loses focus.
+// change	Value changes (select, input, textarea).
+// input	Fires on every input change.
+// invalid	Input fails validation.
+
+//4. Window / Document Events
+
+//     Event	Description
+// load	Page fully loaded (including images).
+// DOMContentLoaded	HTML fully loaded (before images/styles).
+// resize	Window size changes.
+// scroll	User scrolls page.
+// beforeunload	Page is about to unload.
+// unload	Page is unloaded.
+
+//5. Clipboard Events
+
+// Event	Description
+// copy	Copy operation.
+// cut	Cut operation.
+// paste	Paste operation.
+
+//6. Drag & Drop Events
+// dragstart	Dragging starts.
+// drag	While dragging.
+// dragend	Dragging ends.
+// dragenter	Draggable enters drop target.
+// dragleave	Leaves drop target.
+// dragover	Over drop target.
+// drop	Dropped on target.
+
+//7. Media Events
+//Used for <audio> and <video>.
+// Event	Description
+// play	Media starts playing.
+// pause	Media pauses.
+// ended	Media ends.
+// timeupdate	Time changes during playback.
+// volumechange	Volume changes.
+// loadeddata	Data loaded.
+// error	Error in loading.
+
+//8  Touch Events (Mobile)
+// Event	Description
+// touchstart	Finger touches screen.
+// touchmove	Finger moves on screen.
+// touchend	Finger lifted.
+// touchcancel	Touch canceled.
+
+//9
+// Example — Event Usage
+
+// document.getElementById("btn").addEventListener("click", function() {
+//     alert("Button clicked!");
+// });
+
+// document.addEventListener("keydown", function(e) {
+//     console.log("Key pressed:", e.key);
+// });DOM = Document Object Model.
+
+
+// 1. What is DOM?
+//It's a programming interface for HTML & XML documents.
+//It represents the page structure as a tree of nodes (objects) that JavaScript can manipulate.
+//Every HTML element is a node in the DOM.
+
+// 2. DOM vs HTML
+// | HTML (Static)           | DOM (Dynamic)                     |
+// | ----------------------- | --------------------------------- |
+// | Written in `.html` file | Created in browser memory         |
+// | Can’t change after load | Can be changed anytime with JS    |
+// | Just text in file       | Objects with properties & methods |
+
+// 3. DOM Node Types
+// Element Node → <div>, <p>, <h1>, etc.
+//Text Node → Text inside tags.
+//Attribute Node → id="main", class="red"
+//Comment Node → <!-- comment -->.
+
+//4. DOM Selection Methods
+// | Method                     | Example                                    | Description                |
+// | -------------------------- | ------------------------------------------ | -------------------------- |
+// | `getElementById()`         | `document.getE
+// lementById("id")`            | Select by ID               |
+// | `getElementsByClassName()` | `document.getElementsByClassName("class")` | Select by class            |
+// | `getElementsByTagName()`   | `document.getElementsByTagName("p")`       | Select by tag              |
+// | `querySelector()`          | `document.querySelector("#id")`            | First match (CSS selector) |
+// | `querySelectorAll()`       | `document.querySelectorAll(".class")`      | All matches (NodeList)     |
+
+
+// 5. DOM Manipulation
+// Get / Set Content:
+// document.getElementById("title").innerHTML = "New Title";
+// document.getElementById("title").textContent = "Only Text";
+
+// Change Attribute:
+// document.querySelector("img").setAttribute("src", "new.jpg");
+// document.querySelector("h1").style.color = "red";
+// Create Elements:
+// let newDiv = document.createElement("div");
+// newDiv.textContent = "Hello World";
+// document.body.appendChild(newDiv);
+
+// 6. DOM Events
+// document.getElementById("btn").addEventListener("click", function(){
+//     alert("Button clicked!");
+// });
+
+// Common Events:
+// click
+
+// mouseover, mouseout
+
+// keydown, keyup
+
+// submit
+
+// change
+
+// DOMContentLoaded
+
+// scroll
+
+// focus, blur
+
+// 7. Traversing the DOM
+// let parent = document.getElementById("child").parentNode;
+// let children = document.getElementById("parent").children;
+// let first = document.getElementById("parent").firstElementChild;
+// let last = document.getElementById("parent").lastElementChild;
+
+// 8. DOM Lifecycle
+// Loading – HTML parsing.
+// DOM Constructed – DOMContentLoaded fires.
+// Assets Loaded – Images, CSS load.
+// Ready for Interaction.
