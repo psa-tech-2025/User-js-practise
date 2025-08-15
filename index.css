@@ -109,3 +109,40 @@ input::-webkit-outer-spin-button,
       7- background-clip
       8- background-origin
       9- background- shorthand */
+
+   /* 7-Font Related Properties
+      1- font-family
+      2-  font-size   Can be in px, em, rem, %, vw, etc
+      3-  font-weight  values: normal, bold, lighter, bolder, or numeric 100–90 //Specifies the thickness or boldness of the tex
+      4-  font-style   Controls whether text is normal, italic, or oblique.
+      5-  font-variant   Displays text in small caps.
+      6-  font-stretch  Expands or condenses the font width.  Values: normal, expanded, condensed, etc.
+      7. line-height  Controls the vertical spacing between lines.
+      8. letter-spacing   Adjusts the space between letters.
+      9- word-spacing   Adjusts the space between words
+      10. text-transform  Changes the case of text. Values: uppercase, lowercase, capitalize, none
+      11. Shorthand Property – font
+        font-style → font-variant → font-weight → font-size/line-height → font-family
+          font: italic small-caps bold 16px/1.5 Arial, sans-serif; */
+          /* Display Properties all
+
+    1. display Property Overview
+        2. Common Display Values
+            block
+            inline
+            inline-block
+            none
+        3-B. Flexbox Displays
+            1-flex  Turns container into a flex container.
+            Children become flex items.
+            2-inline-flex 
+        4-C. Grid Displays
+            1-grid   Turns container into a grid layout
+            2-inline-grid
+        5-D. Table Displays
+            1-table – Behaves like <table>
+            2-inline-table – Table but inline
+            3-table-row – Behaves like <tr>
+            4-table-cell – Behaves like <td>
+            5-table-caption – Behaves like <caption> */
+            
