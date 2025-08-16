@@ -90,14 +90,14 @@ let sh =17;
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-(async function() {
-    let numdo = 0;
-    do {
-        console.log('Number', numdo);
-        await delay(1000); // wait 10 seconds
-        numdo++;
-    } while (numdo <= 5);
-})();
+// (async function() {
+//     let numdo = 0;
+//     do {
+//         console.log('Number', numdo);
+//         await delay(1000); // wait 10 seconds
+//         numdo++;
+//     } while (numdo <= 5);
+// })();
 //5. for...in loop
 let forn = { name:'sp',age:'23',address:'xyz'};
 for(let key in forn) {
@@ -595,3 +595,163 @@ console.log(shaiiow)
 // DOM Constructed – DOMContentLoaded fires.
 // Assets Loaded – Images, CSS load.
 // Ready for Interaction.
+
+const data = [
+  {
+    id: 1,
+    name: "Shailesh",
+    age: 28,
+    email: "shailesh@example.com",
+    salary: 45000.75,
+    skills: ["Angular", "JavaScript", "Node.js"],
+    joinDate: "2021-05-10"
+  },
+  {
+    id: 2,
+    name: "Priya",
+    age: 24,
+    email: "priya@example.com",
+    salary: 52000.5,
+    skills: ["React", "HTML", "CSS"],
+    joinDate: "2022-02-15"
+  },
+  {
+    id: 3,
+    name: "Rahul",
+    age: 30,
+    email: "rahul@example.com",
+    salary: 61000.2,
+    skills: ["Vue", "TypeScript", "Node.js"],
+    joinDate: "2019-08-21"
+  },
+  {
+    id: 4,
+    name: "Ayesha",
+    age: 26,
+    email: "ayesha@example.com",
+    salary: 48000.9,
+    skills: ["Angular", "Bootstrap", "MongoDB"],
+    joinDate: "2023-01-12"
+  },
+  {
+    id: 5,
+    name: "Vikram",
+    age: 35,
+    email: "vikram@example.com",
+    salary: 70000.85,
+    skills: ["Python", "Django", "JavaScript"],
+    joinDate: "2018-11-03"
+  }
+];
+
+console.log(data.length);
+// console.log(data.reverse());
+// console.log(data.map((emp) => Math.ceil(emp.salary)));
+// console.log(data.map((emp) => Math.round(emp.salary)));
+// let roundme = data.map((emp) => Math.round(emp.salary));
+// console.log(roundme);
+// console.log(data);
+
+let dataupdate = data.map(em => ({...em,
+    salary:Math.round(em.salary)
+}));
+console.log(dataupdate)
+let sortage = data.sort((a,b) =>a.age -b.age );
+data.forEach((emp, index) => {
+  emp.id = index + 1;
+});
+console.log(sortage);
+let namecapatilize = sortage.map(emp => ({...emp,
+    name:emp.name.toUpperCase()
+}));
+console.log(namecapatilize);
+console.log(sortage);
+//upto31
+let upto30 = sortage.filter(emp => emp.age >=29);
+upto30.forEach((index,i) => {
+   index.id =i+1
+})
+console.log(upto30)
+
+//1-from
+//2-of
+//3-shift
+//4-unshift
+//5-push
+//6-pop 
+//7-splice
+//8-slice
+//9-map
+//reduce
+//10-filter
+//11-sort
+//12-indexOf
+//13-lastindexOf
+//15-fill
+//16-concat
+//17-reverse
+//18-includes
+//19-foreach
+//20-find
+//21-findIndex
+//22-some 
+//23-every
+//24-join()
+//25-toString()
+//26-reduceRight()
+//27-flat()
+//28-flatmap()
+
+
+
+//String Methods
+//1-toUppercase
+//2-toLowercase
+//3-include()
+//4-indexof()
+//5-lastindexOf()
+//6-slice()
+//7-splice()
+//8-substr()
+//9-substring()
+//10-charAt()
+//11-charCodeAt()
+//12-at()
+//13-trim()
+//14-trimStart()
+//15-trimEnd()
+//16-padStart()
+//17-padEnd()
+//18-replace()
+//19-replaceAll()
+//20-new String()
+//21-length
+//22-startsWith()
+//23-endsWith()
+//24-repeat()
+//25-split()
+//26-join()
+//27-match
+//28-search
+
+
+//Number Methods
+
+//1-Number()
+//2-toString()
+//3-ParseInt()
+//4-Parsefloat()
+//5-Math.round()
+//6-Math.sqrt()
+//7-Math.ceil()
+//8-Math.Min()
+//9Math.max()
+//10-isFInite()
+//11-isInteger()
+//12-isNaN()
+//13-toFixed()
+//14-toprecision()
+//15-valueof()
+
+
+
